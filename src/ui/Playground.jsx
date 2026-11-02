@@ -3,7 +3,7 @@ import { LLM_TRANSLATION, MY_TRANSLATION } from '../data'
 import {
   SIM_STOP, STOPWORDS, bigramModel, cosine, jaccard, ngrams, nextWordProbs, sentTokenize, simpleWords, stem, wordTokenize,
 } from '../nlp/nlp'
-import { EditDistanceWidget, Tabs } from './ui'
+import { EditDistanceWidget, Tabs } from './widgets'
 
 const SAMPLE = 'Lionel Messi won the 2022 FIFA World Cup with Argentina. He scored twice in the final vs. France! Dr. Sharma said, "NLP isn\'t easy." The ticket cost Rs. 450.50 only.'
 const TWEET = 'Floods in #Chennai again!!! @NDRF please help 🙏 stuck near Velachery https://t.co/x1'
@@ -114,19 +114,12 @@ function Similarity() {
 
 export default function Playground() {
   return (
-    <div className="doc">
-      <header className="dochead">
-        <p className="eyebrow">Interactive</p>
-        <h2>NLP Playground</h2>
-        <p className="muted">The techniques from this course, running live in your browser. No server, no API.</p>
-      </header>
-      <Tabs tabs={[
-        ['Tokenizer', <Tokenizer key="t" />],
-        ['Stemmer', <Stemmer key="s" />],
-        ['N-grams', <Ngrams key="n" />],
-        ['Similarity', <Similarity key="c" />],
-        ['Edit distance', <div className="pg" key="e"><EditDistanceWidget a="INTENTION" b="EXECUTION" /></div>],
-      ]} />
-    </div>
+    <Tabs tabs={[
+      ['Tokenizer', <Tokenizer key="t" />],
+      ['Stemmer', <Stemmer key="s" />],
+      ['N-grams', <Ngrams key="n" />],
+      ['Similarity', <Similarity key="c" />],
+      ['Edit distance', <div className="pg" key="e"><EditDistanceWidget a="INTENTION" b="EXECUTION" /></div>],
+    ]} />
   )
 }

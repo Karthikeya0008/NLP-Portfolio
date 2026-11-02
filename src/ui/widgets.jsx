@@ -1,36 +1,17 @@
 import { useMemo, useRef, useState } from 'react'
 import { editDistance } from '../nlp/nlp'
 
-export const Stars = ({ n }) => <span className="stars" aria-label={`${n} star${n === 1 ? '' : 's'}`}>{'★'.repeat(n)}</span>
-
-export function Doc({ eyebrow, title, meta, children }) {
-  return (
-    <article className="doc">
-      <header className="dochead">
-        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h2>{title}</h2>
-        {meta && <div className="docmeta">{meta}</div>}
-      </header>
-      {children}
-    </article>
-  )
-}
-
-export const Block = ({ label, children }) => (
-  <div className="block">{label && <p className="label">{label}</p>}{children}</div>
-)
-
 export const Chip = ({ children }) => <span className="chip">{children}</span>
 
-export function Photos({ items, wide, single }) {
+export function Photos({ items, wide, single, shots, gallery }) {
   const dlg = useRef(null)
   const [cur, setCur] = useState(null)
   const show = (it) => { setCur(it); dlg.current?.showModal?.() }
   return (
     <>
-      <div className={`photos ${wide ? 'wide' : ''} ${single ? 'single' : ''}`}>
+      <div className={`photos ${wide ? 'wide' : ''} ${single ? 'single' : ''} ${shots ? 'shots' : ''} ${gallery ? 'gallery' : ''}`}>
         {items.map(([src, alt]) => (
-          <button key={src} type="button" onClick={() => show([src, alt])}><img src={src} alt={alt} loading="lazy" /></button>
+          <button key={src} type="button" onClick={() => show([src, alt])} aria-label={`Enlarge: ${alt}`}><img src={src} alt={alt} loading="lazy" /></button>
         ))}
       </div>
       <dialog ref={dlg} className="lightbox" onClick={(e) => e.target === dlg.current && dlg.current.close()}>

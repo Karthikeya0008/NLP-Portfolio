@@ -6,11 +6,17 @@ import cat1d from './assets/cat1d.jpg'
 import med from './assets/med.jpg'
 import duo from './assets/duo.jpg'
 import result from './assets/result.jpg'
+import cat2 from './assets/cat2.jpg'
+import crisisQuery from './assets/crisis-query.jpg'
+import crisisFeed from './assets/crisis-feed.jpg'
+import crisisProcess from './assets/crisis-process.jpg'
 
-import profile from './assets/profile.png'
-import portrait from './assets/profile-cutout.png'
+import portrait from './assets/dara.jpg'
+import team from './assets/team.jpg'
+import reviewDara from './assets/review-dara.jpg'
+import reviewTeam from './assets/review-team.jpg'
 
-export const PHOTO = profile
+export const PHOTO = portrait
 export const PORTRAIT = portrait
 
 export const ME = {
@@ -20,18 +26,27 @@ export const ME = {
   reg: '23MIC0008',
   program: 'Integrated M.Tech, Computer Science and Engineering (in collaboration with Virtusa)',
   college: 'VIT Vellore',
+  year: 'Fourth year',
+  semester: 'Fall Semester 2026–27',
   course: 'Natural Language Processing and Computational Linguistics',
   code: 'CSI4001',
   slot: 'F1 + TF1',
   faculty: 'Dr. Sharmila Banu K',
   github: 'https://github.com/Karthikeya0008',
-  stars: 6,
+  stars: 7,
   languages: [
     ['English', 'Germanic'], ['Hindi', 'Indo-Aryan'], ['Telugu', 'Dravidian'], ['Kannada', 'Dravidian'], ['Spanish', 'Romance'],
   ],
 }
 
-export const IMAGES = { cat1: [cat1a, cat1b, cat1c, cat1d], med, duo, result }
+export const IMAGES = { cat1: [cat1a, cat1b, cat1c, cat1d], med, duo, result, cat2 }
+
+// The final review of CrisisBridge AI.
+export const REVIEW_PHOTOS = [
+  [team, 'Team CrisisBridge AI at the final review: Dara Karthikeya, Sahasra Reddy and Harshitha Raj'],
+  [reviewDara, 'Dara presenting the problem statement: signal lost in the noise'],
+  [reviewTeam, 'Presenting the core capability: from raw report to actionable priority'],
+]
 
 export const CAT1_PHOTOS = [
   [cat1a, 'Notebook: tokenization and stop words in NLTK'],
@@ -81,20 +96,6 @@ export const NLTK_FILES = [
   ['07_builtin_corpora.py', '05 Sep 2026', 'Gutenberg, Brown, Inaugural, Naive Bayes sentiment'],
 ]
 
-// Timeline. `date` is shown as written; edit freely.
-export const TIMELINE = [
-  { date: '02 Aug 2026', kind: 'Practice', title: 'Started NLTK practice', text: 'Set up NLTK and began one script per topic, beginning with tokenization.', app: 'projects' },
-  { date: 'Aug 2026', kind: 'Classroom', title: 'Minimum Edit Distance solved before the deadline', text: 'Solved REPLACE → DELETE in my notebook and gave git diff as the real-world use case. 1 star.', app: 'med' },
-  { date: '14 Aug 2026', kind: 'Assessment', title: 'CAT-1: highest score in the class', text: 'Answers backed with citations and references, NLTK code written correctly, full marks in Question 3. 2 stars.', app: 'cat1' },
-  { date: '16–27 Aug 2026', kind: 'Practice', title: 'POS tagging, NER and n-grams', text: 'Chunking grammars, named entities, PMI collocations and a hand-built bigram model.', app: 'projects' },
-  { date: '05 Sep 2026', kind: 'Practice', title: 'Finished the NLTK series', text: 'WordNet and built-in corpora, ending with a Naive Bayes sentiment classifier.', app: 'projects' },
-  { date: 'Sep 2026', kind: 'Classroom', title: "Translated Pothana's Telugu verse", text: 'Compared my translation with an LLM, computed similarity metrics and scored both on a rubric. 3 stars.', app: 'translation' },
-  { date: 'Oct 2026', kind: 'Project', title: 'Building CrisisBridge AI', text: 'Faculty-suggested disaster response system: classification, NER, urgency scoring and RAG.', app: 'projects' },
-  { date: '18 Oct 2026', kind: 'Languages', title: '62-day Spanish streak', text: 'Daily practice since ma\'am encouraged the class to keep learning languages.', app: 'about' },
-  { date: '27 Oct 2026', kind: 'Achievement', title: 'IntelliCode 2026: first place', text: 'Multi-agent RAG over IPO prospectuses, at the NEXAI conclave codeathon. ₹5,000 prize.', app: 'trophies' },
-  { date: '31 Oct 2026', kind: 'Portfolio', title: 'Shipped Lexicon OS', text: 'This portfolio, built as a small operating system in React.', app: 'welcome' },
-]
-
 // Syllabus coverage, following the official CSI4001 syllabus (v1.0, Academic Council No. 64).
 // status: 'starred' (earned stars), 'built' (used in my code or projects), 'course' (covered in the course).
 export const SYLLABUS = [
@@ -122,10 +123,10 @@ export const SYLLABUS = [
     ['Path-based word similarity', 'built', 'projects'], ['Resnik, Lin and Jiang-Conrath similarity', 'course'],
     ['Word sense disambiguation', 'course'] ] },
   { m: 7, area: 'Application of NLP', hours: 5, topics: [
-    ['Machine vs human translation: a case study', 'starred', 'translation'], ['Information extraction', 'built', 'projects'],
-    ['Text summarization', 'built', 'trophies'], ['Text classification', 'built', 'projects'], ['Sentiment analysis using Python', 'built', 'projects'] ] },
+    ['Machine vs human translation: a case study', 'starred', 'translation'], ['Information extraction', 'starred', 'crisisbridge'],
+    ['Text summarization', 'built', 'trophies'], ['Text classification', 'starred', 'crisisbridge'], ['Sentiment analysis using Python', 'built', 'projects'] ] },
   { m: 8, area: 'Contemporary Issues', hours: 2, topics: [
-    ['Retrieval-augmented generation', 'built', 'projects'], ['Multi-agent LLM systems', 'built', 'trophies'] ] },
+    ['Retrieval-augmented generation', 'starred', 'crisisbridge'], ['Multi-agent LLM systems', 'built', 'trophies'] ] },
 ]
 
 export const COURSE_OUTCOMES = [
@@ -136,4 +137,76 @@ export const COURSE_OUTCOMES = [
   ['POS tagging and choosing a language model', 'playground'],
   ['State-of-the-art text processing techniques', 'projects'],
   ['Statistical methods for real-world applications, and deep learning based NLP', 'trophies'],
+]
+
+// CrisisBridge AI, from the final review deck and the project report.
+export const PROJECT = {
+  team: [['Dara Karthikeya', '23MIC0008'], ['Sahasra Reddy', '23MIC0037'], ['Harshitha Raj', '23MID0294']],
+  problem: 'During floods, cyclones and earthquakes, thousands of social posts arrive within minutes, far more than any response team can read. Real emergencies (trapped people, medical needs, exact places) sit among rumours, sympathy messages and unrelated content, so manual triage stops working.',
+  gap: 'Prior systems such as AIDR and TREC-IS classify and tag messages well, but they respond to a stream, not a question. A coordinator still scrolls through ranked output with no way to ask “What is critical right now, near XYZ?”',
+  goal: 'Extract what is happening, where, who needs help and how urgent it is, then let coordinators ask for that information in plain language, with every answer cited to the source reports.',
+  facts: [
+    ['0.36%', 'of disaster tweets in India carry precise geo-tags, so location has to be read from the text'],
+    ['77K+', 'human-labelled crisis tweets across 19 real disaster events in HumAID'],
+  ],
+  stack: [
+    ['Language and data', 'Python 3.11, pandas, HumAID, CrisisBench, IDRISI'],
+    ['NLP and ML', 'scikit-learn TF-IDF + logistic regression, rules + IDRISI gazetteer'],
+    ['Retrieval', 'sentence-transformers (all-MiniLM-L6-v2), FAISS'],
+    ['Generation', 'Groq gpt-oss-20b, Gemini 3.5 Flash, alert translation'],
+    ['Interface', 'FastAPI, HTML, CSS and JavaScript, Streamlit'],
+    ['Testing', '23 offline tests, every network call mocked'],
+  ],
+  curated: [
+    ['HumAID', '77K tweets from 19 disasters, the primary training set (10 humanitarian labels)'],
+    ['CrisisBench', 'CrisisLex, SWDM2013, CrisisMMD and AIDR tweets added to training at weight 0.3'],
+    ['IDRISI-R', 'Gold place names from 19 disasters, used to train the location extractor (683-place gazetteer)'],
+    ['Bundled sample', '50 hand-written labelled messages for the offline demo and tests'],
+  ],
+  live: ['GDACS', 'NASA EONET', 'NDMA SACHET (IMD)', 'Google News', 'Indian newspapers', 'Bluesky', 'Mastodon', 'USGS and EMSC'],
+  example: {
+    text: 'Family of 5 stuck on a roof in Velachery, need a boat',
+    fields: [['Location', 'Velachery'], ['Need', 'Rescue'], ['People', '5'], ['Priority', 'Critical']],
+    score: [['Category: requests or urgent needs', 28], ['Life threat: on a roof, stuck', 30], ['Explicit urgency: need', 6], ['5 people affected', 13], ['Primary need: Rescue', 15]],
+    total: '91.9',
+  },
+  results: [
+    ['0.72', 'Classification accuracy on 5,000 held-out HumAID test tweets (macro-F1 0.70, 10 classes)'],
+    ['2,346', 'Reports indexed from HumAID, sample data and 8 live sources'],
+    ['0.63 → 0.77', 'Location F1 on IDRISI gold labels after learning a 683-place gazetteer (0.69 on unseen disasters)'],
+    ['0.54 → 0.82', 'Accuracy on tweets from 8 other datasets after adding CrisisBench, with HumAID test unchanged at 0.72'],
+    ['22 → 100', 'NDMA alerts usable per fetch, after translating Telugu, Hindi, Bengali, Odia, Marathi and Tamil alerts'],
+    ['8', 'Free live sources, none needing an API key'],
+  ],
+  screens: [
+    [crisisQuery, 'Commander Query: a plain-language question answered with a cited report, ranked Critical with urgency 100/100'],
+    [crisisFeed, 'Live Priority Feed: 23 critical and 74 high-priority reports, with filters and CSV export'],
+    [crisisProcess, 'Process a Message: location, need, people and priority extracted, with the urgency score broken down'],
+  ],
+  references: [
+    'M. Imran, C. Castillo, F. Diaz and S. Vieweg, "Processing social media messages in mass emergency: A survey," ACM Computing Surveys, vol. 47, no. 4, 2015.',
+    'A. Olteanu, C. Castillo, F. Diaz and S. Vieweg, "CrisisLex: A lexicon for collecting and filtering microblogged communications in crises," in Proc. ICWSM, 2014.',
+    'M. Imran, C. Castillo, J. Lucas, P. Meier and S. Vieweg, "AIDR: Artificial intelligence for disaster response," in Proc. WWW Companion, 2014.',
+    'F. Alam, U. Qazi, M. Imran and F. Ofli, "HumAID: Human-annotated disaster incidents data from Twitter with deep learning benchmarks," in Proc. ICWSM, 2021.',
+    'F. Alam, H. Sajjad, M. Imran and F. Ofli, "CrisisBench: Benchmarking crisis-related social media datasets for humanitarian information processing," in Proc. ICWSM, 2021.',
+    'R. McCreadie, C. Buntain and I. Soboroff, "TREC Incident Streams: Finding actionable information on social media," in Proc. ISCRAM, 2019.',
+    'R. Suwaileh, T. Elsayed and M. Imran, "IDRISI-R: Large-scale English and Arabic location mention recognition datasets for disaster response over Twitter," arXiv preprint, 2023.',
+    'P. Lewis et al., "Retrieval-augmented generation for knowledge-intensive NLP tasks," in Proc. NeurIPS, 2020.',
+    'N. Reimers and I. Gurevych, "Sentence-BERT: Sentence embeddings using Siamese BERT-networks," in Proc. EMNLP-IJCNLP, 2019.',
+    'W. Wang et al., "MiniLM: Deep self-attention distillation for task-agnostic compression of pre-trained transformers," in Proc. NeurIPS, 2020.',
+    'J. Johnson, M. Douze and H. Jégou, "Billion-scale similarity search with GPUs," IEEE Transactions on Big Data, 2019.',
+    'E. McDaniel, S. Scheele and J. Liu, "Zero-shot classification of crisis tweets using instruction-finetuned large language models," arXiv preprint, 2024.',
+    'Comparative study of BERT, zero-shot GPT and retrieval-augmented generation for conflict-news classification (Sudan conflict), Algorithms (MDPI), 2025.',
+    'SafeMate: a modular RAG-based agent for context-aware emergency guidance, arXiv:2505.02306, 2025.',
+    'F. Pedregosa et al., "Scikit-learn: Machine learning in Python," Journal of Machine Learning Research, vol. 12, 2011.',
+    'Live data sources: GDACS (gdacs.org), NDMA SACHET (sachet.ndma.gov.in), USGS Earthquake Hazards Program, NASA EONET, EMSC, Bluesky API and Mastodon API.',
+  ],
+}
+
+// Public links for the project. `alt` adds a second button: [label, href].
+export const RESOURCES = [
+  { kind: 'PDF', title: 'Project report', text: 'Motivation, existing gap, architecture, datasets, NLP pipeline, results and references.', cta: 'Read the report', href: 'https://drive.google.com/file/d/1hY-Ip8ap7p99zkvFBzPoP1ht7_-OynT7/view?usp=sharing' },
+  { kind: 'Video', title: 'Demo video', text: 'A walkthrough of the web console: commander query, live priority feed and processing a message.', cta: 'Watch on YouTube', href: 'https://youtu.be/-cgLgBKU1rU', alt: ['Watch on Drive', 'https://drive.google.com/file/d/1Xa1RQ_rZJlLuiGsWEtbZzXL8Ptgvvck_/view?usp=sharing'] },
+  { kind: 'Slides', title: 'Final review presentation', text: 'The deck from the final review: problem, data, architecture, implementation and results.', cta: 'View the slides', href: 'https://docs.google.com/presentation/d/17nVrA4Xd4SNnsEaI9VSXvimn5dPihOXS/edit?usp=sharing' },
+  { kind: 'GitHub', title: 'Source code', text: 'The full CrisisBridge AI code, sample data, 23 offline tests and a README with setup and run steps.', cta: 'Open the repository', href: 'https://github.com/Karthikeya0008/Crisis-Bridge-AI' },
 ]
