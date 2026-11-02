@@ -206,7 +206,7 @@ export const PROJECT = {
 // Public links for the project. `alt` adds a second button: [label, href].
 export const RESOURCES = [
   { kind: 'PDF', title: 'Project report', text: 'Motivation, existing gap, architecture, datasets, NLP pipeline, results and references.', cta: 'Read the report', href: 'https://drive.google.com/file/d/1hY-Ip8ap7p99zkvFBzPoP1ht7_-OynT7/view?usp=sharing' },
-  { kind: 'Video', title: 'Demo video', text: 'A walkthrough of the web console: commander query, live priority feed and processing a message.', cta: 'Watch on YouTube', href: 'https://youtu.be/-cgLgBKU1rU', alt: ['Watch on Drive', 'https://drive.google.com/file/d/1Xa1RQ_rZJlLuiGsWEtbZzXL8Ptgvvck_/view?usp=sharing'] },
+  { kind: 'Video', title: 'Demo video', text: 'A walkthrough of the web console: commander query, live priority feed and processing a message.', cta: 'Watch on YouTube', href: 'https://youtu.be/0f3UogIf0dM', alt: ['Watch on Drive', 'https://drive.google.com/file/d/1wkBnQAmBsvbJ2BTmA5BEwgRqwc7DhHMN/view?usp=sharing'] },
   { kind: 'Slides', title: 'Final review presentation', text: 'The deck from the final review: problem, data, architecture, implementation and results.', cta: 'View the slides', href: 'https://docs.google.com/presentation/d/17nVrA4Xd4SNnsEaI9VSXvimn5dPihOXS/edit?usp=sharing' },
   { kind: 'GitHub', title: 'Source code', text: 'The full CrisisBridge AI code, sample data, 23 offline tests and a README with setup and run steps.', cta: 'Open the repository', href: 'https://github.com/Karthikeya0008/Crisis-Bridge-AI' },
 ]
